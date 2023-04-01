@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<title>Multi Search</title>
+	<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #0069d9;
+  cursor: pointer;
+}
+
+select {
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+	</style>
+<body>
+
+<div class="container">
+  <input type="text" name="search" id="search" placeholder="Search...">
+  <select id="engineSelect">
+    <option value="google">Google</option>
+    <option value="amazon">Amazon UK</option>
+    <option value="youtube">YouTube</option>
+  </select>
+  <button type="button" onclick="search()">Search</button>
+</div>
+
+<script>
+function search() {
+  var query = document.getElementById("search").value;
+  var engine = document.getElementById("engineSelect").value;
+  if (engine === "google") {
+    window.location.href = "https://www.google.com/search?q=" + query;
+  } else if (engine === "amazon") {
+    window.location.href = "https://www.amazon.co.uk/s?k=" + query;
+  } else if (engine === "youtube") {
+    window.location.href = "https://www.youtube.com/results?search_query=" + query;
+  }
+}
+
+  window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+      clearSearchBox();
+    }
+  });
+
+  function clearSearchBox() {
+    document.getElementById("search").value = "";
+  }
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    search();
+  }
+});
+
+</script>
+
+</body>
+</html>
