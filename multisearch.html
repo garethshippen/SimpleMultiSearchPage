@@ -55,6 +55,7 @@ select {
     <option value="wikipedia">Wikipedia</option>
     <option value="amazon">Amazon UK</option>
     <option value="google">Google</option>
+    <option value="googlemaps">Google Maps</option>
   </select>
   <button type="button" onclick="search()">Search</button>
 </div>
@@ -71,6 +72,8 @@ function search() {
     window.location.href = "https://www.youtube.com/results?search_query=" + query;
   } else if (engine === "wikipedia") {
     window.location.href = "https://en.wikipedia.org/wiki/" + query;
+  } else if (engine === "googlemaps") {
+    window.location.href = "https://www.google.com/maps/search/?api=1&" + query;
   }
 }
 
