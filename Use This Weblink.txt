@@ -1,1 +1,1 @@
-https://htmlpreview.github.io/?https://github.com/garethshippen/SimpleMultiSearchPage/blob/7b2c35d60fe859a965ae9bf633da58620c21e96b/multisearch.html
+https://htmlpreview.github.io/?https://github.com/garethshippen/SimpleMultiSearchPage/blob/0bbafbba9dd3e4400e583e8c9ac0dff7a8a3c8fd/multisearch.html
